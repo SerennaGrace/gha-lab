@@ -13,3 +13,13 @@ jobs:
       - run: python hello.py
       - run: python addition.py
       - run: pytest test_addition.py
+      - run: publish.txt
+        #Publishing test reults
+      - uses: actions/checkout@v3
+      - run: mkdir -p path/to/artifact
+      - run: echo hello > path/to/artifact/publish.txt
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: path/to/artifact/publish.txt
