@@ -10,3 +10,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: python hello.py
+      - run: python addition.py
+      - run: pytest test_addition.py
